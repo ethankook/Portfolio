@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="images/fav.png" type="image/png">
+
+  <title>Ethan's Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <a href="#" class="logo">EK</a>
+  
+      <nav class="navbar">
+        <a href="#home" class="homepage">Home</a>
+        <a href="#resume" class="resumepage">Resume</a>
+        <a href="#contact" class="contactpage">Contact</a>
+      </nav>
+  
+      <div class="socials">
+        <a href="https://linkedin.com/in/ethan-kook" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/ethankook" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="mailto:ethankook1@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </header>
+  
+
+
+  <section class="grid">
+    <div class="grid-item" style="grid-column: span 2; grid-row: span 1;">
+      <div class="intro">
+        <p>Hi, I'm Ethan.</p>
+        <p>I like to build stuff.</p>
+        <p>These are some of my projects.</p>
+      </div>
+    </div>
+    <div class="grid-item" id="project1" onclick="location.href='?project=1'" style="grid-column: span 1; grid-row: span 1;">
+      <img src="images\proj1.png" alt="Project 1">
+      <div class="overlay">Project 1 description goes here.</div>
+    </div>
+    <div class="grid-item" id="project2" onclick="location.href='?project=2'" style="grid-column: span 2; grid-row: span 2">
+      <img src="images\proj2.png" alt="Project 2">
+      <div class="overlay">Project 2 description goes here.</div>
+    </div>
+    <div class="grid-item" id="project3" onclick="location.href='?project=3'" style="grid-column: span 1; grid-row: span 1;">
+      <img src="images\proj1.png" alt="Project 3">
+      <div class="overlay">Project 1 description goes here.</div>
+    </div>
+    <div class="grid-item" id="project4" onclick="location.href='?project=4'" style="grid-column: span 2; grid-row: span 1;">
+      <img src="images\proj4.png" alt="Project 4">
+      <div class="overlay">Project 3 description goes here.</div>
+    </div>
+  </section>
+
+</body>
+</html>
