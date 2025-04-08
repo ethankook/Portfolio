@@ -121,3 +121,34 @@ body {
 html {
     scroll-behavior: smooth;
 }
+
+.resumePage img{
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    font-weight: bold;
+    font-size: 1rem;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.resumePage p{
+    font-size: 15pt;
+    padding:30px;
+    font-family: Georgia, serif
+}
+.download-btn{
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    font-weight: bold;
+    font-size: 1rem;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+}
+.download-btn:hover{
+    background-color: #555;
+}
