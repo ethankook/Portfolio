@@ -2,38 +2,39 @@
     <div class="modal-content">
       <span class="close" onclick="closeModal('modalSynth')">&times;</span>
       <h1>Digital Audio Synthesizer</h1>
-      <h2>Completed</h2>
+      <h2>Completed Project</h2>
+      <div class="githubRepo" style="text-align: center;">
+        <a href="https://github.com/ZhenmanShen/ECE45ECProject.git" target="_blank" style="text-decoration: none; font-weight: bold;">
+          Github Repository <i class="fab fa-github" style="margin-left: 0.5rem;"></i>
+        </a>
+      </div>
+      <p><strong>Overview:</strong> A powerful digital audio synthesizer developed in MATLAB, offering users a hands-on interface to explore sound generation, manipulation, and effects processing. The app allows real-time waveform generation, audio transformation, and visualization within an intuitive GUI.</p>
   
-      <p><strong>Overview:</strong> This synthesizer is a fully interactive digital audio workstation built in MATLAB using the Audio Toolbox. It allows users to generate, manipulate, and visualize audio signals with various effects and transformations through a clean, GUI-based interface. The synthesizer supports waveform generation, sound modification, signal visualization, and audio playback.</p>
-  
-      <p><strong>Key Features:</strong> Users can choose from predefined signals or upload audio files, apply filters and effects, and view signal changes in both the time and frequency domains. The interface supports dynamic controls like sliders, knobs, dropdown menus, and buttons to activate effects in real time.</p>
-  
-      <p><strong>Functionality Includes:</strong></p>
+      <p><strong>Key Features:</strong></p>
       <ul>
-        <li>Waveform generation (sine, cosine, triangle, square, sawtooth)</li>
-        <li>Volume, pitch, and speed adjustment</li>
-        <li>Amplitude modulation, frequency shifting, and envelope shaping</li>
-        <li>Audio effects: delay, reverb, flanger, chorus, echo, muffled, distortion</li>
-        <li>Filtering: bandpass, bandstop, and frequency enhancement</li>
-        <li>Signal mixing and convolution</li>
-        <li>ECG waveform and heartbeat signal synthesis</li>
-        <li>Melody generation and white noise creation</li>
+        <li>Generation of sine, square, sawtooth, triangle, and ECG waveforms</li>
+        <li>Audio effects: echo, reverb, chorus, flanger, distortion, delay, muffled</li>
+        <li>Volume, pitch, and speed controls</li>
+        <li>Real-time FFT visualization and signal playback</li>
+        <li>Envelope shaping and white noise synthesis</li>
+        <li>Interactive GUI for all controls using MATLAB App Designer</li>
       </ul>
   
-      <p><strong>Engineering Tools & Skills Used:</strong></p>
-      <ul>
-        <li><strong>MATLAB</strong> — primary development environment</li>
-        <li><strong>MATLAB App Designer</strong> (`.mlapp`) — GUI construction</li>
-        <li><strong>Audio Toolbox</strong> — pitch shifting, convolution, reverb, playback</li>
-        <li><strong>Digital Signal Processing</strong> — time/frequency domain transformations, filtering, sampling</li>
-        <li><strong>Fourier Analysis</strong> — used to generate and analyze frequency responses</li>
-        <li><strong>Convolution</strong> — audio blending and effect application</li>
-        <li><strong>Modulation Techniques</strong> — amplitude modulation, additive synthesis</li>
-      </ul>
+      <p><strong>Technology Used:</strong> MATLAB, MATLAB App Designer, Audio Toolbox</p>
   
-      <p><strong>Workflow:</strong> Users load or select an audio file, apply desired effects through the GUI, and visualize the waveform updates on graphs. They can switch between modified and original signals and interactively explore the impact of filters and transformations using real-time playback.</p>
+      <p><strong>Process:</strong> The project began with core waveform functions and expanded into a full interface. Each audio effect was modularly designed and chained using internal signal flow logic. Visual elements such as spectrum analyzers and time plots were created for user interaction and feedback.</p>
   
-      <p><strong>Applications:</strong> This synthesizer serves as a modular platform for music production, audio experimentation, and signal analysis. It is also suitable for rapid prototyping of audio effects or sound-based interfaces, offering hands-on exposure to core DSP techniques and sound engineering workflows.</p>
+      <p><strong>Challenges:</strong> Handling overlapping effects without signal clipping, managing GUI state transitions, and ensuring responsiveness in real-time audio processing.</p>
+  
+      <p><strong>Accomplishments:</strong> A polished and flexible synthesis tool capable of both educational use and creative sound design. Achieved a robust real-time interface with interactive controls and audio output.</p>
+  
+      <p><strong>Applications:</strong> DSP education, sound design experimentation, signal chain prototyping, and audio effect testing.</p>
+
+      <h3 style="text-align: center; margin-top: 2rem;">View Full Report</h3>
+      <div style="display: flex; justify-content: center; margin-top: 1rem;">
+        <iframe src="../images/SynthSetupGuide.pdf" width="90%" height="600px" style="border: 1px solid #ccc;"></iframe>
     </div>
+    </div>
+
+    
   </div>
-  

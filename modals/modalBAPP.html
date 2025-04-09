@@ -1,35 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div class="modal" id="modalBAPP">
-        <div class="modal-content">
-        <span class="close" onclick="closeModal('modalBAPP')">&times;</span>
-            <h1>BAPP: A Simple Budgeting App</h1>
-            <h2>In Progress...</h2>
-            <p><strong>Inspiration:</strong> Managing personal finances can be overwhelming, especially for students and young professionals. We wanted to build a simple, intuitive tool that helps users visualize their spending and build better money habits—no spreadsheets or bank account connections required.</p>
-        
-            <p><strong>What it does:</strong> BAPP is a lightweight budgeting app where users can set a total budget and allocate spending across custom categories (e.g., groceries, rent, entertainment). Through a clean dashboard and modal-based editing system, users can easily track their expenses and remaining funds in each category.</p>
-        
-            <p><strong>How we built it:</strong> The backend is built with <strong>Spring Boot</strong> and uses <strong>PostgreSQL</strong> to store budget data. The frontend is developed with <strong>React</strong> and <strong>TypeScript</strong> for a responsive, accessible user experience. We prioritized usability and left out account integration to keep the app lean and immediately functional.</p>
-        
-            <p><strong>Challenges:</strong> We faced challenges designing a modal system that felt smooth and non-intrusive while ensuring backend data remained consistent. Synchronizing real-time data between components also required thoughtful state management and API handling.</p>
-        
-            <p><strong>Accomplishments:</strong> We're proud of delivering a full-stack app with clean design, smooth interactions, and modular code. It’s something we actually find useful ourselves, and we kept the codebase organized for future growth.</p>
-        
-            <p><strong>What we learned:</strong> We gained experience building full-stack applications from scratch, integrating <strong>React</strong> with <strong>Spring Boot</strong>, and designing maintainable state and modal flows. We also learned how to convert user needs into clear, actionable features within a tight development timeline.</p>
-        
-            <p><strong>What’s next:</strong> We plan to add persistent sessions, recurring budget support, visualizations (like pie charts and progress bars), CSV export, mobile responsiveness, and secure authentication for personalized tracking.</p>
-        
-            <p><strong>Built With:</strong> Java, Spring Boot, React, TypeScript, PostgreSQL</p>
-        
-        </div>
-    </div>
+<div class="modal" id="modalBAPP">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modalBAPP')">&times;</span>
+      <h1>BAPP</h1>
+      <h2>In Progress...</h2>
 
-    
-</body>
-</html>
+      <div class="githubRepo" style="text-align: center;">
+        <a href="https://github.com/kjhlee/Diamondhacks_projects.git" target="_blank" style="text-decoration: none; color: rgb(82, 81, 81); font-weight: bold;">
+          Github Repository <i class="fab fa-github" style="margin-left: 0.5rem;"></i>
+        </a>
+      </div>
+  
+      <p><strong>Overview:</strong> A lightweight budgeting tool designed to help users visualize spending and build better money habits. BAPP allows users to set a budget and allocate custom categories without the need for login or bank integration.</p>
+  
+      <p><strong>Key Features:</strong></p>
+      <ul>
+        <li>Custom budget categories with editable allocations</li>
+        <li>Users can easily add or update allocations via a modal interface, view how much they’ve spent in each category , and see how much they have left in their budget, all in one accessible dashboard.</li>
+        <li>Expense and savings tracker that are automatically updated utilizing Plaid API.</li>
+
+      </ul>
+  
+      <p><strong>Technology Used:</strong> Spring Boot, PostgreSQL, React, TypeScript, JavaScript, CSS</p>
+  
+      <p><strong>Challenges:</strong> Smooth modal design and syncing backend updates with frontend state.</p>
+      <p><strong>Accomplishments:</strong> Fully functional full-stack app with a modular, intuitive interface.</p>
+    </div>
+  </div>

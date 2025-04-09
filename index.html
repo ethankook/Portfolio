@@ -18,7 +18,6 @@
       <nav class="navbar">
         <a href="index.html" style="color:rgb(59, 25, 139); font-family: Georgia, serif;">Home</a>
         <a href="resume.html" >Resume</a>
-        <a href="contact.html">Contact</a>
       </nav>
   
       <div class="socials">
@@ -33,11 +32,7 @@
 
   <section class="grid">
     <div class="grid-item" style="grid-column: span 2; grid-row: span 1;">
-      <div class="intro">
-        <p>Hi, I'm Ethan.</p>
-        <p>I like to build stuff.</p>
-        <p>These are some of my projects.</p>
-      </div>
+      <div class="intro" id="typed-intro"></div>
     </div>
     <div class="grid-item" onclick="openModal('modalBAPP', 'modalBAPP.html')">
       <div class="grid-proj">
@@ -57,7 +52,7 @@
         <div class="overlay">
           <div class="overlay-content">
             <h1>RISC Processor</h1>
-            <p>RISC-V processor simulator</p>
+            <p>Custom RISC processor and instruction set</p>
           </div>
         </div>
       </div>
@@ -68,7 +63,7 @@
         <div class="overlay">
           <div class="overlay-content">
             <h1>Digital Synthesizer</h1>
-            <p>Digital synthesizer built with MATLAB</p>
+            <p>GUI-based audio synthesizer</p>
           </div>
         </div>
       </div>
@@ -78,9 +73,8 @@
         <img src="images\carLogo.png" alt="Project 4">
         <div class="overlay">
           <div class="overlay-content">
-            <h1>Autonomous Car</h1>
-            <p>Autonomous car built with ROS</p>
-            <p>Includes a GUI and various sound synthesis techniques</p>
+            <h1>Autonomous Racing Robot</h1>
+            <p>Self driving robot with track detection and motor control.</p>
           </div>
         </div>
       </div>
@@ -88,6 +82,43 @@
 
   </section>
 
-
+  <script>
+    const introText = [
+      "Hi, I'm Ethan.",
+      "I like to build stuff.",
+      "These are some of my projects."
+    ];
+  
+    let lineIndex = 0;
+    let charIndex = 0;
+    const speed = 40;
+    const pause = 700;
+  
+    function typeNextLine() {
+      const container = document.getElementById("typed-intro");
+  
+      if (lineIndex < introText.length) {
+        if (charIndex <= introText[lineIndex].length) {
+          container.innerHTML = introText
+            .slice(0, lineIndex)
+            .map(line => `<p>${line}</p>`)
+            .join('') +
+            `<p>${introText[lineIndex].slice(0, charIndex)}<span class="blinker">|</span></p>`;
+          charIndex++;
+          setTimeout(typeNextLine, speed);
+        } else {
+          charIndex = 0;
+          lineIndex++;
+          setTimeout(typeNextLine, pause);
+        }
+      } else {
+        // Remove cursor after typing is done
+        container.innerHTML = introText.map(line => `<p>${line}</p>`).join('');
+      }
+    }
+  
+    document.addEventListener("DOMContentLoaded", typeNextLine);
+  </script>
+  
 </body>
 </html>

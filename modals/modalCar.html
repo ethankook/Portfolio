@@ -1,44 +1,41 @@
 <div class="modal" id="modalCar">
     <div class="modal-content">
       <span class="close" onclick="closeModal('modalCar')">&times;</span>
-      <h1>Autonomous Line-Following Robot</h1>
+      <h1>Autonomous Racing Robot</h1>
       <h2>Completed</h2>
+      <div class="githubRepo" style="text-align: center;">
+        <a href="https://github.com/ethankook/ECE5Lab4.git" target="_blank" style="text-decoration: none; font-weight: bold;">
+          Github Repository <i class="fab fa-github" style="margin-left: 0.5rem;"></i>
+        </a>
+      </div>
   
-      <p><strong>Overview:</strong> This project involved designing, building, and tuning an autonomous robot capable of navigating various track layouts using PID control and analog photoresistor sensors. The robot competed in multiple timed and performance-based trials including line loops, drag races, and precision-based frequency tracks.</p>
+      <p><strong>Overview:</strong> A fully autonomous robot built to navigate tracks of varying complexity using analog photoresistor input and PID feedback control. The robot was tuned for performance across multiple competition scenarios including loops, drag races, and obstacle-heavy tracks.</p>
   
-      <p><strong>Hardware Design:</strong> The robot was constructed from a custom chassis fitted with dual motors, encoders, photoresistors for line sensing, and a power management system. Major enhancements included:</p>
+      <p><strong>Key Features:</strong></p>
       <ul>
-        <li>Soldered protoboards to reduce weight and wiring complexity</li>
-        <li>Height-adjustable photoresistors for more consistent line detection</li>
-        <li>8 ultra-bright LEDs to enhance line visibility and sensor accuracy</li>
-        <li>Underglow lighting for controlled light environments</li>
-        <li>On/off motor switch for easier testing</li>
+        <li>Dynamic PID tuning through potentiometers</li>
+        <li>Adjustable base speed for terrain/track specific performance</li>
+        <li>LED underglow for sensor stabilization and visibility</li>
+        <li>3D modeled chassis(Onshape) and custom-soldered protoboards</li>
+        
       </ul>
   
-      <p><strong>Control System:</strong> The robot used a PID-based control algorithm implemented in C++ on an Arduino platform. Parameters were dynamically adjusted through potentiometers, allowing real-time calibration of:</p>
-      <ul>
-        <li><code>NOMINALSPEED</code> — base motor speed</li>
-        <li><code>P</code> — proportional response to line deviation</li>
-        <li><code>I</code> — accumulated error to compensate drift</li>
-        <li><code>D</code> — error rate to stabilize quick deviations</li>
-      </ul>
+      <p><strong>Technology Used:</strong> Arduino, C++, analog sensors, soldering tools, motor drivers, signal debugging with multimeters and oscilloscopes</p>
   
-      <p><strong>Performance:</strong> The robot performed across four distinct challenges, each requiring its own strategy:</p>
-      <ul>
-        <li><strong>Loop Track:</strong> Tuned for consistent circular laps with stable P/D values and mid-range speed</li>
-        <li><strong>Drag Race:</strong> Maximized speed (up to 110) with minimal control logic, as the track was linear</li>
-        <li><strong>Frequency Track:</strong> Required delicate tuning with lower speed and higher sensitivity; handled sharp corners and frequent changes</li>
-        <li><strong>Lemon Track:</strong> Balanced between responsiveness and noise filtering using high P values and selective D adjustments</li>
-      </ul>
+      <p><strong>Process:</strong> Initial builds focused on chassis stability and signal fidelity from sensors. Iterative testing led to multiple board redesigns to improve light detection accuracy. PID parameters were fine-tuned based on track types. LEDs were added to ensure consistent lighting. Components were secured with hot glue to prevent disconnection under stress.</p>
   
-      <p><strong>Iteration & Troubleshooting:</strong> The robot underwent multiple redesigns. Sensor positioning and lighting were refined through four board revisions. Significant gains were made by lowering photoresistors closer to the surface and refining LED coverage to minimize shadow interference. Hot-gluing wires to the Arduino ensured robust electrical connections under mechanical stress.</p>
+      <p><strong>Challenges:</strong> Sudden signal loss due to inconsistent lighting, battery voltage drops, and PID instability on sharp curves. Debugging required real-time observation and repeated test loops with adjusted parameters.</p>
   
-      <p><strong>Challenges:</strong> Voltage drop from used batteries impacted speed and accuracy. Unexpected behavior from the robot—such as veering off course after multiple successful laps—was mitigated through speed reduction and more conservative PID settings. Late-stage tuning revealed sensitivity to even minor calibration mismatches, emphasizing the need for consistent test environments.</p>
+      <div style="text-align: center; margin: 2rem 0;">
+        <figure style="margin: 1rem auto; width: 80%; max-width: 600px;">
+    <img src="images/prototype.jpg" alt="Prototype Car" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+    <figcaption style="margin-top: 0.5rem; font-size: 0.95rem; color: #555;">
+      Prototype with light shield and photoresistor circuit to detect track, Arduino for code deployment, potentiometers to manually control SPID values, battery, and rubber casings on the wheels for more grip.
+    </figcaption>
+  </figure>
+      </div>
   
-      <p><strong>Tools & Technologies:</strong> C++, Arduino, PID control theory, soldering, analog signal tuning, protoboard fabrication, mechanical design, LED circuit integration, sensor calibration, and collaborative debugging techniques.</p>
-  
-      <p><strong>Results:</strong> The robot placed 3rd in the drag race, completed 9 loops in the circuit challenge, and reached the 6th checkpoint in the frequency track. Its modular, lightweight design and agile control system demonstrated adaptability across multiple terrain profiles.</p>
-  
+      
     </div>
   </div>
   

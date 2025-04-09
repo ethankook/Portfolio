@@ -1,34 +1,71 @@
 <div class="modal" id="modalRISC">
     <div class="modal-content">
       <span class="close" onclick="closeModal('modalRISC')">&times;</span>
-      <h1>RISC Processor: Minimalist CPU Design</h1>
+      <h1>RISC Processor</h1>
       <h2>Completed</h2>
-  
-      <p><strong>Architecture Overview:</strong> A custom register-register/load-store processor with 8 general-purpose registers (R0–R7), direct and indirect addressing modes, and a minimalist instruction set designed for compact and efficient computation.</p>
-  
-      <p><strong>What it does:</strong> The processor executes a variety of instructions including arithmetic, logical, shift, memory, and custom branch operations. It uses a 5-bit Lookup Table (LUT) for branching, and supports subroutines and control flow through conditional instructions like <code>beq</code> and <code>bne</code>.</p>
-  
-      <p><strong>How it works:</strong> The architecture includes a dedicated ALU with extended support for unique bitwise and shifting operations, a PC_LUT for LUT-indexed branching, and a tightly integrated control unit for decoding and managing custom instructions. Data memory is 8-bit wide and 256 bytes deep, enabling full-cycle load/store operations.</p>
+
+      <div class="githubRepo" style="text-align: center;">
+        <a href="https://github.com/ethankook/RISC.git" target="_blank" style="text-decoration: none; font-weight: bold;">
+          Github Repository <i class="fab fa-github" style="margin-left: 0.5rem;"></i>
+        </a>
+      </div>
+      
+
+      <p><strong>Overview:</strong> This project involved the design and implementation of a custom RISC-style processor with 8 general-purpose registers and a compact instruction set architecture. The goal was to build a minimal yet functional CPU capable of executing arithmetic, logic, and branch instructions, including support for 16-bit integer and 16-bit IEEE-754 floating-point data conversions and addition/subtraction. We used the processor's custom instruction set to write a program in Assembly Language to handle the conversion and computations. A custom compiler for the instruction set, to convert the program from ASM to machine code was also created using C++. </p>
   
       <p><strong>Key Features:</strong></p>
       <ul>
-        <li>Logical shifts spanning one or two registers</li>
-        <li>Branch logic via LUT indexing</li>
-        <li>Custom bit manipulation instructions (e.g., <code>cfb</code>, <code>mbs</code>)</li>
-        <li>Instruction decoding for both R-type and B-type instructions</li>
-        <li>Three functional programs for int-to-float, float-to-int, and float-float conversion</li>
+        <li>Register-register / Load-store architecture with direct and indirect addressing</li>
+        <li>Optimized register file design, prioritizing registers 0 to 3 for frequently accessed operations, while 4 to 7 are utilized for storage. Special handling of 0 as the implied destination for certain branch comparisons.</li>
+        <li>LUT-based conditional branching and control flow, storing up to 32 jump locations</li>
+        <li>Custom instructions for logical shifts, bit manipulation, and subroutine handling</li>
+        <li>Logical shifts can span one or two registers.</li>
+        <li>Support for 16-bit integer and 16-bit IEEE-754 floating-point data types</li>
+        <li>8-bit wide, 256-byte deep memory, to support indirect addressing during memory access instructions</li>
+        <li>The ALU also supports a comparison operation. Given two registers (R0 and R1), it will compare the data in these registers and return one of three values..</li>
+        <li>Control unit to decode the instruction code (op-code) and manage the flow of data across the data path.</li>
+
       </ul>
   
-      <p><strong>Challenges:</strong> Debugging data flow in memory operations and aligning floating-point representations revealed edge cases where unexpected NaN values would propagate. Some issues arose from operand order in <code>ldr</code> instructions, and infinite loops caused by improper program counter updates during branching.</p>
+      <p><strong>Technology Used:</strong> Verilog, SystemVerilog, C++, ModelSim, waveform analysis tools, Assembly Language(ASM)</p>
   
-      <p><strong>Accomplishments:</strong> We successfully implemented a custom instruction set and hardware modules that enabled complex data transformations, including floating-point arithmetic and normalization, all within the limitations of an 8-register machine.</p>
+      <p><strong>Process:</strong> The processor architecture was designed from the ground up, starting with the instruction set and register file. An ALU module was built to support both standard arithmetic and custom bitwise operations. A memory subsystem handled instruction and data memory independently. Testing was performed with custom testbenches and waveform outputs to validate correctness at each stage.</p>
   
-      <p><strong>What we learned:</strong> Deepened our understanding of processor datapaths, instruction encoding, ALU design, and how subtle issues like argument ordering in memory operations can affect full system correctness. We also gained experience debugging testbench output and ensuring correctness with signal-level comparisons.</p>
+      <p><strong>Challenges:</strong> Addressing edge cases in floating-point conversion, handling operand ordering in memory instructions, and eliminating infinite loop scenarios in early branch logic prototypes.</p>
+
+      
+
+      <p><strong>Instruction Set Overview:</strong></p>
+      <table style="border-collapse: separate; border-spacing: 6rem 0.5rem;">
+        <thead>
+          <tr>
+            <th>Instruction</th>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Bit Breakdown</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><code>and</code></td><td>R</td><td>Logical AND between two registers</td><td>8: branch (0), 7–6: src, 5–4: dest, 3–0: 0000</td></tr>
+          <tr><td><code>or</code></td><td>R</td><td>Logical OR between two registers</td><td>8: branch (0), 7–6: src, 5–4: dest, 3–0: 0001</td></tr>
+          <tr><td><code>lsl</code></td><td>R</td><td>Logical shift left</td><td>8: branch (0), 7–6: src, 5–4: dest, 3–0: 0010</td></tr>
+          <tr><td><code>lsr</code></td><td>R</td><td>Logical shift right</td><td>8: branch (0), 7–6: src, 5–4: dest, 3–0: 0011</td></tr>
+          <tr><td><code>add</code></td><td>R</td><td>Add two registers</td><td>8: branch (0), 7–6: src, 5–4: dest, 3–0: 0100</td></tr>
+          <tr><td><code>sub</code></td><td>R</td><td>Subtract one register from another</td><td>8: branch (0), 7–6: src, 5–4: dest, 3–0: 1101</td></tr>
+          <tr><td><code>neg</code></td><td>R</td><td>Negate register value</td><td>8: branch (0), 7–6: src, 5–4: dest, 3–0: 0101</td></tr>
+          <tr><td><code>ldr</code></td><td>R</td><td>Load value from memory</td><td>8: branch (0), 7–6: addr, 5–4: dest, 3–0: 0110</td></tr>
+          <tr><td><code>str</code></td><td>R</td><td>Store register to memory</td><td>8: branch (0), 7–6: src, 5–4: addr, 3–0: 0111</td></tr>
+          <tr><td><code>mov</code></td><td>R</td><td>Move immediate to register</td><td>8: branch (0), 7–4: value, 3–0: 1000</td></tr>
+          <tr><td><code>mot</code></td><td>R</td><td>Move to/from R0</td><td>8: branch (0), 7–5: reg, 4: direction, 3–0: 1001</td></tr>
+          <tr><td><code>lso</code></td><td>R</td><td>1-bit logical shift</td><td>8: branch (0), 7–5: reg, 4: L/R, 3–0: 1010</td></tr>
+          <tr><td><code>cfb</code></td><td>R</td><td>Check first bit</td><td>8: branch (0), 7–5: reg, 4: dead, 3–0: 1011</td></tr>
+          <tr><td><code>cmp</code></td><td>R</td><td>Compare registers</td><td>8: branch (0), 7–6: dest, 5–4: src, 3–0: 1100</td></tr>
+          <tr><td><code>mbs</code></td><td>R</td><td>Move bits</td><td>8: branch (0), 7–5: reg, 4: bit count, 3–0: 1110</td></tr>
+          <tr><td><code>beq</code></td><td>B</td><td>Branch if equal</td><td>8: branch (1), 7–6: reg, 5: 0, 4–0: LUT index</td></tr>
+          <tr><td><code>bne</code></td><td>B</td><td>Branch if not equal</td><td>8: branch (1), 7–6: reg, 5: 1, 4–0: LUT index</td></tr>
+        </tbody>
+      </table>
   
-      <p><strong>Next Steps:</strong> Refine the interaction between top-level modules and memory during <code>ldr</code> operations, improve branching stability, and extend the instruction set for better flexibility and abstraction.</p>
-  
-      <p><strong>Built With:</strong> Verilog, SystemVerilog</p>
-  
+      <p>
     </div>
   </div>
-  
