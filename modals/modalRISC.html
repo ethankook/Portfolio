@@ -1,0 +1,34 @@
+<div class="modal" id="modalRISC">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modalRISC')">&times;</span>
+      <h1>RISC Processor: Minimalist CPU Design</h1>
+      <h2>Completed</h2>
+  
+      <p><strong>Architecture Overview:</strong> A custom register-register/load-store processor with 8 general-purpose registers (R0–R7), direct and indirect addressing modes, and a minimalist instruction set designed for compact and efficient computation.</p>
+  
+      <p><strong>What it does:</strong> The processor executes a variety of instructions including arithmetic, logical, shift, memory, and custom branch operations. It uses a 5-bit Lookup Table (LUT) for branching, and supports subroutines and control flow through conditional instructions like <code>beq</code> and <code>bne</code>.</p>
+  
+      <p><strong>How it works:</strong> The architecture includes a dedicated ALU with extended support for unique bitwise and shifting operations, a PC_LUT for LUT-indexed branching, and a tightly integrated control unit for decoding and managing custom instructions. Data memory is 8-bit wide and 256 bytes deep, enabling full-cycle load/store operations.</p>
+  
+      <p><strong>Key Features:</strong></p>
+      <ul>
+        <li>Logical shifts spanning one or two registers</li>
+        <li>Branch logic via LUT indexing</li>
+        <li>Custom bit manipulation instructions (e.g., <code>cfb</code>, <code>mbs</code>)</li>
+        <li>Instruction decoding for both R-type and B-type instructions</li>
+        <li>Three functional programs for int-to-float, float-to-int, and float-float conversion</li>
+      </ul>
+  
+      <p><strong>Challenges:</strong> Debugging data flow in memory operations and aligning floating-point representations revealed edge cases where unexpected NaN values would propagate. Some issues arose from operand order in <code>ldr</code> instructions, and infinite loops caused by improper program counter updates during branching.</p>
+  
+      <p><strong>Accomplishments:</strong> We successfully implemented a custom instruction set and hardware modules that enabled complex data transformations, including floating-point arithmetic and normalization, all within the limitations of an 8-register machine.</p>
+  
+      <p><strong>What we learned:</strong> Deepened our understanding of processor datapaths, instruction encoding, ALU design, and how subtle issues like argument ordering in memory operations can affect full system correctness. We also gained experience debugging testbench output and ensuring correctness with signal-level comparisons.</p>
+  
+      <p><strong>Next Steps:</strong> Refine the interaction between top-level modules and memory during <code>ldr</code> operations, improve branching stability, and extend the instruction set for better flexibility and abstraction.</p>
+  
+      <p><strong>Built With:</strong> Verilog, SystemVerilog</p>
+  
+    </div>
+  </div>
+  

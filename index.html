@@ -8,6 +8,7 @@
   <title>Ethan's Portfolio</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <header class="header">
@@ -16,7 +17,7 @@
   
       <nav class="navbar">
         <a href="index.html" style="color:rgb(59, 25, 139); font-family: Georgia, serif;">Home</a>
-        <a href="resume.html" class="resumepage">Resume</a>
+        <a href="resume.html" >Resume</a>
         <a href="contact.html">Contact</a>
       </nav>
   
@@ -38,23 +39,55 @@
         <p>These are some of my projects.</p>
       </div>
     </div>
-    <div class="grid-item" id="project1" onclick="location.href='?project=1'" style="grid-column: span 1; grid-row: span 1;">
-      <img src="images\proj1.png" alt="Project 1">
-      <div class="overlay">Project 1 description goes here.</div>
+    <div class="grid-item" onclick="openModal('modalBAPP', 'modalBAPP.html')">
+      <div class="grid-proj">
+        <img src="images/BAPPLogo.png" alt="BAPP">
+        <div class="overlay">
+          <div class="overlay-content">
+            <h1>BAPP</h1>
+            <p>Budgeting App</p>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="grid-item" id="project2" onclick="location.href='?project=2'" style="grid-column: span 2; grid-row: span 2">
-      <img src="images\proj2.png" alt="Project 2">
-      <div class="overlay">Project 2 description goes here.</div>
+    
+    <div class="grid-item" id="projRISC" onclick="openModal('modalRISC', 'modalRISC.html')" style="grid-column: span 2; grid-row: span 2">
+      <div class="grid-proj">
+        <img src="images\processorLogo.png" alt="RISC">
+        <div class="overlay">
+          <div class="overlay-content">
+            <h1>RISC Processor</h1>
+            <p>RISC-V processor simulator</p>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="grid-item" id="project3" onclick="location.href='?project=3'" style="grid-column: span 1; grid-row: span 1;">
-      <img src="images\proj1.png" alt="Project 3">
-      <div class="overlay">Project 1 description goes here.</div>
+    <div class="grid-item" id="projSynth" onclick="openModal('modalSynth', 'modalSynth.html')" style="grid-column: span 1; grid-row: span 1;">
+      <div class="grid-proj">
+        <img src="images\synthLogo.png" alt="Project 3">
+        <div class="overlay">
+          <div class="overlay-content">
+            <h1>Digital Synthesizer</h1>
+            <p>Digital synthesizer built with MATLAB</p>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="grid-item" id="project4" onclick="location.href='?project=4'" style="grid-column: span 2; grid-row: span 1;">
-      <img src="images\proj4.png" alt="Project 4">
-      <div class="overlay">Project 3 description goes here.</div>
+    <div class="grid-item" id="projCar" onclick="openModal('modalCar', 'modalCar.html')" style="grid-column: span 2; grid-row: span 1;">
+      <div class="grid-proj">
+        <img src="images\carLogo.png" alt="Project 4">
+        <div class="overlay">
+          <div class="overlay-content">
+            <h1>Autonomous Car</h1>
+            <p>Autonomous car built with ROS</p>
+            <p>Includes a GUI and various sound synthesis techniques</p>
+          </div>
+        </div>
+      </div>
     </div>
+
   </section>
+
 
 </body>
 </html>

@@ -1,0 +1,44 @@
+<div class="modal" id="modalCar">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modalCar')">&times;</span>
+      <h1>Autonomous Line-Following Robot</h1>
+      <h2>Completed</h2>
+  
+      <p><strong>Overview:</strong> This project involved designing, building, and tuning an autonomous robot capable of navigating various track layouts using PID control and analog photoresistor sensors. The robot competed in multiple timed and performance-based trials including line loops, drag races, and precision-based frequency tracks.</p>
+  
+      <p><strong>Hardware Design:</strong> The robot was constructed from a custom chassis fitted with dual motors, encoders, photoresistors for line sensing, and a power management system. Major enhancements included:</p>
+      <ul>
+        <li>Soldered protoboards to reduce weight and wiring complexity</li>
+        <li>Height-adjustable photoresistors for more consistent line detection</li>
+        <li>8 ultra-bright LEDs to enhance line visibility and sensor accuracy</li>
+        <li>Underglow lighting for controlled light environments</li>
+        <li>On/off motor switch for easier testing</li>
+      </ul>
+  
+      <p><strong>Control System:</strong> The robot used a PID-based control algorithm implemented in C++ on an Arduino platform. Parameters were dynamically adjusted through potentiometers, allowing real-time calibration of:</p>
+      <ul>
+        <li><code>NOMINALSPEED</code> — base motor speed</li>
+        <li><code>P</code> — proportional response to line deviation</li>
+        <li><code>I</code> — accumulated error to compensate drift</li>
+        <li><code>D</code> — error rate to stabilize quick deviations</li>
+      </ul>
+  
+      <p><strong>Performance:</strong> The robot performed across four distinct challenges, each requiring its own strategy:</p>
+      <ul>
+        <li><strong>Loop Track:</strong> Tuned for consistent circular laps with stable P/D values and mid-range speed</li>
+        <li><strong>Drag Race:</strong> Maximized speed (up to 110) with minimal control logic, as the track was linear</li>
+        <li><strong>Frequency Track:</strong> Required delicate tuning with lower speed and higher sensitivity; handled sharp corners and frequent changes</li>
+        <li><strong>Lemon Track:</strong> Balanced between responsiveness and noise filtering using high P values and selective D adjustments</li>
+      </ul>
+  
+      <p><strong>Iteration & Troubleshooting:</strong> The robot underwent multiple redesigns. Sensor positioning and lighting were refined through four board revisions. Significant gains were made by lowering photoresistors closer to the surface and refining LED coverage to minimize shadow interference. Hot-gluing wires to the Arduino ensured robust electrical connections under mechanical stress.</p>
+  
+      <p><strong>Challenges:</strong> Voltage drop from used batteries impacted speed and accuracy. Unexpected behavior from the robot—such as veering off course after multiple successful laps—was mitigated through speed reduction and more conservative PID settings. Late-stage tuning revealed sensitivity to even minor calibration mismatches, emphasizing the need for consistent test environments.</p>
+  
+      <p><strong>Tools & Technologies:</strong> C++, Arduino, PID control theory, soldering, analog signal tuning, protoboard fabrication, mechanical design, LED circuit integration, sensor calibration, and collaborative debugging techniques.</p>
+  
+      <p><strong>Results:</strong> The robot placed 3rd in the drag race, completed 9 loops in the circuit challenge, and reached the 6th checkpoint in the frequency track. Its modular, lightweight design and agile control system demonstrated adaptability across multiple terrain profiles.</p>
+  
+    </div>
+  </div>
+  
