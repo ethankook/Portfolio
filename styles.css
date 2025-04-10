@@ -177,7 +177,7 @@ html {
 .modal-content {
   background-color: #ffffff;
   margin: 5vh auto;
-  padding: 2.5rem;
+  padding: 2rem;
   width: 90%;
   max-width: 1000px;
   border-radius: 20px;
@@ -186,29 +186,30 @@ html {
   line-height: 1.8;
   color: #333;
   animation: fadeInContent 0.3s ease;
+  box-sizing: border-box;
 }
 
 .modal-content h1 {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   margin-bottom: 1rem;
 }
 
-  .modal-content h2 {
-      font-size: 1.5rem;
-      line-height: 1.6;
-      margin-bottom: 1rem;
-      color: #555;
-  }
+.modal-content h2 {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: #555;
+}
 
-  .githubRepo a{
-      color: #555;
-  }
+.githubRepo a{
+    color: #555;
+}
 
-  .githubRepo:hover a{
-      color: #a8a8a8;
-  }
-  
+.githubRepo:hover a{
+    color: #a8a8a8;
+}
+
 
 
 @keyframes fadeInContent {
@@ -291,6 +292,7 @@ html {
 }
 
 
+
 @media (max-width: 800px) {
 
 
@@ -340,6 +342,7 @@ html {
   .overlay-content p{
     font-size: 0.8rem;
   }
+  
 
   .resumePage h1{
     font-size: 1rem;
@@ -351,5 +354,50 @@ html {
 
   .download-btn{
     font-size: .5rem;
+  }
+
+  .modal-content {
+    width: 95%;
+    padding: 1rem;
+    max-width: 95vw;
+    overflow: auto;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  .modal-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .modal-content h2 {
+    font-size: 1.1rem;
+  }
+
+  .modal-content p {
+    font-size: 0.9rem;
+  }
+
+  .close {
+    top: 0.5rem;
+    right: 1rem;
+    font-size: 2rem;
+  }
+
+  .modal-content table {
+    transform: scale(0.5);
+    transform-origin: top left;
+
+  }
+
+  .table-container table {
+    margin: 0 auto;
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .table-container th,
+  .table-container td {
+    padding: 0.4rem;
+    font-size: 0.75rem;
   }
 }
