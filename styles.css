@@ -362,7 +362,6 @@ html {
     max-width: 95vw;
     overflow: auto;
     margin: 0 auto;
-    box-sizing: border-box;
   }
 
   .modal-content h1 {
@@ -384,20 +383,8 @@ html {
   }
 
   .modal-content table {
-    transform: scale(0.5);
+    transform: scale(0.7);
     transform-origin: top left;
-
   }
 
-  .table-container table {
-    margin: 0 auto;
-    width: 100%;
-    border-collapse: collapse;
-  }
-
-  .table-container th,
-  .table-container td {
-    padding: 0.4rem;
-    font-size: 0.75rem;
-  }
 }
