@@ -319,28 +319,32 @@ html {
   }
   .intro{
     padding-top: 0;
-    height: 150px;
+    height: auto;
     text-align: left;
     padding-left: 10px;
+    padding-bottom: 0;
+    flex-direction: column;
   }
   #typed-intro{
-    font-size: 1rem;
+    font-size: clamp(0.55rem, 2.5vw, 1.2rem);
+    line-height: 1.4;
   }
-
   .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .grid-item {
-    background-color: #ffffff;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
   }
   
   .overlay-content h1{
-    font-size: 1rem;
+    font-size: clamp(0.55rem, 2.5vw, 1.2rem);
+    line-height: 1.4;
   }
 
   .overlay-content p{
-    font-size: 0.8rem;
+    font-size: clamp(0.55rem, 2.5vw, 1.2rem);
+    line-height: 1.4;
   }
   
 
@@ -349,7 +353,8 @@ html {
   }
 
   .resumePage img{
-    max-width: 80%
+    max-width: 100%;
+    padding: 0;
   }
 
   .download-btn{
