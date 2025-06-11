@@ -191,6 +191,10 @@ html {
   color: #555;
 }
 
+.modal-content h3 {
+  text-align: center;
+}
+
 .githubRepo a{
     color: #555;
 }
@@ -198,6 +202,21 @@ html {
 .githubRepo:hover a{
     color: #a8a8a8;
 }
+
+.gif-container {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.demo-gif {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 
 
 
